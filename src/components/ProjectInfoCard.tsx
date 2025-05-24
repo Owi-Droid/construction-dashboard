@@ -13,7 +13,7 @@ export function ProjectInfoCard() {
     expectedCompletion: "December 30, 2025",
     status: "In Progress",
     siteManager: {
-      name: "Sara Ahmed",
+      name: "Owais Asad",
       avatar: "/placeholder.svg",
       initials: "SA"
     },
