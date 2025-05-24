@@ -1,8 +1,7 @@
-
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { bell, search } from "lucide-react";
+import { Bell, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 export function Header() {
@@ -12,7 +11,7 @@ export function Header() {
         <div className="flex items-center gap-4">
           <SidebarTrigger className="text-steel-600 hover:text-steel-900" />
           <div className="hidden md:flex relative">
-            <search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-steel-400" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-steel-400" />
             <Input 
               placeholder="Search projects, materials..." 
               className="pl-10 w-64 bg-steel-50 border-steel-200 focus:border-construction-500"
@@ -22,7 +21,7 @@ export function Header() {
         
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" className="relative text-steel-600 hover:text-steel-900">
-            <bell className="w-5 h-5" />
+            <Bell className="w-5 h-5" />
             <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
           </Button>
           

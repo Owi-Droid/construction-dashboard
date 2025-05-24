@@ -1,5 +1,4 @@
-
-import { construction, Home, FileText, Truck, Users, calculator, BarChart3, bell } from "lucide-react";
+import { Construction, Home, FileText, Truck, Users, Calculator, BarChart3, Bell } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Sidebar,
@@ -22,7 +21,7 @@ const menuItems = [
   {
     title: "Projects",
     url: "/projects",
-    icon: construction,
+    icon: Construction,
   },
   {
     title: "Materials",
@@ -42,7 +41,7 @@ const menuItems = [
   {
     title: "Finance",
     url: "/finance",
-    icon: calculator,
+    icon: Calculator,
   },
   {
     title: "Reports",
@@ -52,7 +51,7 @@ const menuItems = [
   {
     title: "Notifications",
     url: "/notifications",
-    icon: bell,
+    icon: Bell,
   },
 ];
 
@@ -64,7 +63,7 @@ export function AppSidebar() {
       <SidebarHeader className="p-6">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-gradient-to-br from-construction-500 to-construction-600 rounded-lg flex items-center justify-center">
-            <construction className="w-6 h-6 text-white" />
+            <Construction className="w-6 h-6 text-white" />
           </div>
           <div>
             <h2 className="text-lg font-bold text-steel-900">BuildTrack</h2>

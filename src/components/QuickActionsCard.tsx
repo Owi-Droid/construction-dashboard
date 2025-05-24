@@ -1,21 +1,21 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { plus, box, FileText } from "lucide-react";
+import { Plus, Box, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function QuickActionsCard() {
   const actions = [
     {
       title: "Add Project",
-      icon: plus,
+      icon: Plus,
       link: "/projects/new",
       color: "bg-construction-500 hover:bg-construction-600",
       description: "Create new construction project"
     },
     {
       title: "Add Material",
-      icon: box,
+      icon: Box,
       link: "/materials/new",
       color: "bg-blue-500 hover:bg-blue-600",
       description: "Add materials to inventory"

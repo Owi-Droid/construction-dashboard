@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
@@ -9,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { search, plus, FileText, eye, edit } from "lucide-react";
+import { Search, Plus, FileText, Eye, Edit } from "lucide-react";
 
 const Invoices = () => {
   const [filterStatus, setFilterStatus] = useState("all");
@@ -106,7 +105,7 @@ const Invoices = () => {
                   <p className="text-steel-600 mt-2">Track and manage all construction material invoices</p>
                 </div>
                 <Button className="bg-construction-500 hover:bg-construction-600">
-                  <plus className="w-4 h-4 mr-2" />
+                  <Plus className="w-4 h-4 mr-2" />
                   Create Invoice
                 </Button>
               </div>
@@ -156,7 +155,7 @@ const Invoices = () => {
                   
                   <div className="flex flex-wrap gap-4 mt-4">
                     <div className="relative flex-1 min-w-64">
-                      <search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-steel-400" />
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-steel-400" />
                       <Input
                         placeholder="Search invoices..."
                         value={searchTerm}
@@ -215,10 +214,10 @@ const Invoices = () => {
                           <TableCell>
                             <div className="flex gap-2">
                               <Button size="sm" variant="outline">
-                                <eye className="w-3 h-3" />
+                                <Eye className="w-3 h-3" />
                               </Button>
                               <Button size="sm" variant="outline">
-                                <edit className="w-3 h-3" />
+                                <Edit className="w-3 h-3" />
                               </Button>
                               {invoice.status !== "Paid" && (
                                 <Button size="sm" className="bg-green-500 hover:bg-green-600 text-xs">

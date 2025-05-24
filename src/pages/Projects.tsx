@@ -1,4 +1,3 @@
-
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Header } from "@/components/Header";
@@ -7,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { construction, calendar, users, plus } from "lucide-react";
+import { Construction, Calendar, Users, Plus } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -85,7 +84,7 @@ const Projects = () => {
                   <p className="text-steel-600 mt-2">Monitor and manage all construction projects</p>
                 </div>
                 <Button className="bg-construction-500 hover:bg-construction-600">
-                  <plus className="w-4 h-4 mr-2" />
+                  <Plus className="w-4 h-4 mr-2" />
                   New Project
                 </Button>
               </div>
@@ -96,7 +95,7 @@ const Projects = () => {
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <div className="flex items-center gap-3">
-                          <construction className="w-8 h-8 text-construction-500" />
+                          <Construction className="w-8 h-8 text-construction-500" />
                           <div>
                             <CardTitle className="text-lg text-steel-900">{project.name}</CardTitle>
                             <p className="text-sm text-steel-600">{project.location}</p>
@@ -113,7 +112,7 @@ const Projects = () => {
                       <div className="grid grid-cols-2 gap-4 text-sm">
                         <div>
                           <p className="text-steel-600 flex items-center gap-1">
-                            <calendar className="w-3 h-3" />
+                            <Calendar className="w-3 h-3" />
                             Start Date
                           </p>
                           <p className="font-semibold">{project.startDate}</p>
@@ -133,7 +132,7 @@ const Projects = () => {
                         </Avatar>
                         <div>
                           <p className="text-sm font-medium text-steel-900 flex items-center gap-1">
-                            <users className="w-3 h-3" />
+                            <Users className="w-3 h-3" />
                             Site Manager
                           </p>
                           <p className="text-sm text-steel-600">{project.siteManager.name}</p>

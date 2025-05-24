@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { construction, box, truck, FileText, calculator } from "lucide-react";
+import { Construction, Box, Truck, FileText, Calculator } from "lucide-react";
 
 export function QuickOverviewCard() {
   const quickStats = {
@@ -38,7 +38,7 @@ export function QuickOverviewCard() {
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 bg-gradient-to-br from-construction-50 to-construction-100 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
-                  <construction className="w-5 h-5 text-construction-600" />
+                  <Construction className="w-5 h-5 text-construction-600" />
                   <p className="font-semibold text-construction-900">Active Projects</p>
                 </div>
                 <p className="text-2xl font-bold text-construction-900">{quickStats.activeProjects}</p>
@@ -46,7 +46,7 @@ export function QuickOverviewCard() {
               
               <div className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
-                  <box className="w-5 h-5 text-blue-600" />
+                  <Box className="w-5 h-5 text-blue-600" />
                   <p className="font-semibold text-blue-900">Materials On Site</p>
                 </div>
                 <p className="text-2xl font-bold text-blue-900">{quickStats.materialsOnSite}</p>
@@ -54,7 +54,7 @@ export function QuickOverviewCard() {
               
               <div className="p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
-                  <truck className="w-5 h-5 text-yellow-600" />
+                  <Truck className="w-5 h-5 text-yellow-600" />
                   <p className="font-semibold text-yellow-900">Pending Deliveries</p>
                 </div>
                 <p className="text-2xl font-bold text-yellow-900">{quickStats.pendingDeliveries}</p>
@@ -74,7 +74,7 @@ export function QuickOverviewCard() {
             <div className="space-y-4">
               <div className="p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
-                  <calculator className="w-5 h-5 text-green-600" />
+                  <Calculator className="w-5 h-5 text-green-600" />
                   <p className="font-semibold text-green-900">Total Budget</p>
                 </div>
                 <p className="text-2xl font-bold text-green-900">Rs. {financeStats.totalBudget.toLocaleString()}</p>

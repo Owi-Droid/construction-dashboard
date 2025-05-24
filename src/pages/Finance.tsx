@@ -1,11 +1,10 @@
-
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Header } from "@/components/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { calculator, BarChart3, FileText, Truck } from "lucide-react";
+import { Calculator, BarChart3, FileText, Truck } from "lucide-react";
 
 const Finance = () => {
   const financeData = {
@@ -92,7 +91,7 @@ const Finance = () => {
                 <Card className="border-l-4 border-l-blue-500">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3">
-                      <calculator className="w-8 h-8 text-blue-600" />
+                      <Calculator className="w-8 h-8 text-blue-600" />
                       <div>
                         <p className="text-sm text-steel-600">Total Budget</p>
                         <p className="text-2xl font-bold text-steel-900">Rs. {financeData.totalBudget.toLocaleString()}</p>

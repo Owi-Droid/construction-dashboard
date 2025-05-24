@@ -1,10 +1,9 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { calendar, users, box, BarChart3, FileText } from "lucide-react";
+import { Calendar, Users, Box, BarChart3, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function ProjectInfoCard() {
@@ -79,7 +78,7 @@ export function ProjectInfoCard() {
         <div className="grid grid-cols-2 gap-4">
           <div className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
             <div className="flex items-center gap-2 mb-2">
-              <box className="w-5 h-5 text-blue-600" />
+              <Box className="w-5 h-5 text-blue-600" />
               <p className="font-semibold text-blue-900">Total Materials</p>
             </div>
             <p className="text-2xl font-bold text-blue-900">{project.totalMaterials}</p>
