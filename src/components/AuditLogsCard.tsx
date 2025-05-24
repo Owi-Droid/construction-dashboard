@@ -66,7 +66,7 @@ export function AuditLogsCard() {
       </CardHeader>
       
       <CardContent>
-        <div className="space-y-4 max-h-96 overflow-y-auto">
+        <div className="space-y-4  overflow-y-auto">
           {auditLogs.map((log) => (
             <div key={log.id} className="border border-steel-200 rounded-lg p-4 hover:shadow-sm transition-shadow">
               <div className="flex items-start gap-3 mb-3">
