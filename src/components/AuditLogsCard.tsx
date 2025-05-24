@@ -28,7 +28,7 @@ export function AuditLogsCard() {
     {
       id: 3,
       dateTime: "May 22, 2025 – 09:58 AM",
-      user: "Kamran",
+      user: "Owais",
       role: "finance",
       action: "Added invoice: Rs. 75,000 from ABC Bricks Supplier",
       module: "Finance",
