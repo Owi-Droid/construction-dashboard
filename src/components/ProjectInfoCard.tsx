@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { calendar, users, box, chart-bar, FileText } from "lucide-react";
+import { calendar, users, box, BarChart3, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function ProjectInfoCard() {
@@ -87,7 +87,7 @@ export function ProjectInfoCard() {
           
           <div className="p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
             <div className="flex items-center gap-2 mb-2">
-              <chart-bar className="w-5 h-5 text-green-600" />
+              <BarChart3 className="w-5 h-5 text-green-600" />
               <p className="font-semibold text-green-900">Total Cost</p>
             </div>
             <p className="text-2xl font-bold text-green-900">

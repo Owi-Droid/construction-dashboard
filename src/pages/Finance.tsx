@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { calculator, chart-bar, FileText, truck } from "lucide-react";
+import { calculator, BarChart3, FileText, Truck } from "lucide-react";
 
 const Finance = () => {
   const financeData = {
@@ -104,7 +104,7 @@ const Finance = () => {
                 <Card className="border-l-4 border-l-red-500">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3">
-                      <chart-bar className="w-8 h-8 text-red-600" />
+                      <BarChart3 className="w-8 h-8 text-red-600" />
                       <div>
                         <p className="text-sm text-steel-600">Total Spent</p>
                         <p className="text-2xl font-bold text-steel-900">Rs. {financeData.totalSpent.toLocaleString()}</p>
@@ -128,7 +128,7 @@ const Finance = () => {
                 <Card className="border-l-4 border-l-green-500">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3">
-                      <truck className="w-8 h-8 text-green-600" />
+                      <Truck className="w-8 h-8 text-green-600" />
                       <div>
                         <p className="text-sm text-steel-600">Available Funds</p>
                         <p className="text-2xl font-bold text-steel-900">Rs. {financeData.availableFunds.toLocaleString()}</p>

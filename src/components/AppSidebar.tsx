@@ -1,5 +1,5 @@
 
-import { construction, Home, FileText, Truck, Users, calculator, chart-bar, bell } from "lucide-react";
+import { construction, Home, FileText, Truck, Users, calculator, BarChart3, bell } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Sidebar,
@@ -47,7 +47,7 @@ const menuItems = [
   {
     title: "Reports",
     url: "/reports",
-    icon: chart-bar,
+    icon: BarChart3,
   },
   {
     title: "Notifications",
