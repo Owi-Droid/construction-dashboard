@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Sidebar, SidebarContent, SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Header } from "@/components/Header";
 import { ProjectInfoCard } from "@/components/ProjectInfoCard";
@@ -10,9 +9,13 @@ import { QuickOverviewCard } from "@/components/QuickOverviewCard";
 import { QuickActionsCard } from "@/components/QuickActionsCard";
 import { InvoicesCard } from "@/components/InvoicesCard";
 import { EditDashboard } from "@/components/EditDashboard";
+import { AuthScreen } from "@/components/AuthScreen";
+
 
 const Index = () => {
-  const [dashboardLayout, setDashboardLayout] = useState({
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+    const [dashboardLayout, setDashboardLayout] = useState({
     projectInfo: true,
     materialStatus: true,
     auditLogs: true,
@@ -20,6 +23,32 @@ const Index = () => {
     quickActions: true,
     invoices: true,
   });
+
+  // 🔐 Hardcoded user credentials
+  const hardcodedUser = {
+    email: "admin@des.com",
+    password: "password123",
+  };
+
+  const handleLogin = (email: string, password: string) => {
+    if (email === hardcodedUser.email && password === hardcodedUser.password) {
+      setIsAuthenticated(true);
+      setError(null);
+    } else {
+      setError("Invalid email or password.");
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div>
+        <AuthScreen onLogin={handleLogin} />
+        {error && (
+          <p className="text-center text-red-600 mt-4 text-sm">{error}</p>
+        )}
+      </div>
+    );
+  }
 
   return (
     <SidebarProvider>
