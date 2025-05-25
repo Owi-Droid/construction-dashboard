@@ -62,11 +62,11 @@ export function MaterialStatusCard() {
   const totalCost = materials.reduce((sum, material) => sum + material.totalCost, 0);
 
   return (
-    <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-500">
+    <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-500 max-h-[500px]  overflow-auto">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="text-xl font-bold text-steel-900">
-            📦 Material Status
+            📦 Material Logs
           </CardTitle>
           <div className="flex gap-2">
             <Select value={filterDate} onValueChange={setFilterDate}>

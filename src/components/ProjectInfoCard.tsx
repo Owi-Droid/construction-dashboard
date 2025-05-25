@@ -119,7 +119,7 @@ export function ProjectInfoCard() {
 
         {/* Action Buttons */}
         <div className="flex gap-3 pt-4 border-t border-steel-200">
-          <Button asChild className="flex-1 bg-construction-500 hover:bg-construction-600">
+          <Button asChild className="flex-1 bg-[#1366D9] hover:bg-[#1570EF]">
             <Link to="/projects/materials">
               <FileText className="w-4 h-4 mr-2" />
               View Materials

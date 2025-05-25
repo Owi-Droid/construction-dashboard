@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Header } from "@/components/Header";
@@ -6,10 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Construction, Calendar, Users, Plus } from "lucide-react";
+import { Construction, Calendar, Users } from "lucide-react";
+import { NewProjectDialog } from "@/components/NewProjectDialog";
+import { ProjectDetailsDialog } from "@/components/ProjectDetailsDialog";
+import { ProjectManageDialog } from "@/components/ProjectManageDialog";
 
 const Projects = () => {
-  const projects = [
+  const [projects, setProjects] = useState([
     {
       id: 1,
       name: "DHA Phase 4 Commercial Plaza",
@@ -55,7 +59,11 @@ const Projects = () => {
       spent: 4800000,
       location: "Safari Park, Lahore"
     }
-  ];
+  ]);
+
+  const handleAddProject = (newProject: any) => {
+    setProjects(prevProjects => [...prevProjects, newProject]);
+  };
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -83,15 +91,12 @@ const Projects = () => {
                   <h1 className="text-3xl font-bold text-steel-900">Projects Overview</h1>
                   <p className="text-steel-600 mt-2">Monitor and manage all construction projects</p>
                 </div>
-                <Button className="bg-construction-500 hover:bg-construction-600">
-                  <Plus className="w-4 h-4 mr-2" />
-                  New Project
-                </Button>
+                <NewProjectDialog onProjectAdd={handleAddProject} />
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                 {projects.map((project) => (
-                  <Card key={project.id} className="shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card key={project.id} className="shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <div className="flex items-center gap-3">
@@ -161,12 +166,16 @@ const Projects = () => {
                       </div>
                       
                       <div className="flex gap-2 pt-2">
-                        <Button variant="outline" className="flex-1" size="sm">
-                          View Details
-                        </Button>
-                        <Button className="flex-1 bg-construction-500 hover:bg-construction-600" size="sm">
-                          Manage
-                        </Button>
+                        <ProjectDetailsDialog project={project}>
+                          <Button variant="outline" className="flex-1" size="sm">
+                            View Details
+                          </Button>
+                        </ProjectDetailsDialog>
+                        <ProjectManageDialog project={project}>
+                          <Button className="flex-1 bg-[#1366D9] hover:bg-[#1570EF]" size="sm">
+                            Manage
+                          </Button>
+                        </ProjectManageDialog>
                       </div>
                     </CardContent>
                   </Card>

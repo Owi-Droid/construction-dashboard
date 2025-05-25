@@ -58,7 +58,7 @@ export function AuditLogsCard() {
   ];
 
   return (
-    <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-purple-500">
+    <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-purple-500 max-h-[500px]  overflow-auto">
       <CardHeader>
         <CardTitle className="text-xl font-bold text-steel-900">
           📋 Audit Logs

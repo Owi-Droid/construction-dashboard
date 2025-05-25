@@ -1,4 +1,4 @@
-import { Construction, Home, FileText, Truck, Users, Calculator, BarChart3, Bell } from "lucide-react";
+import { Construction, Home, FileText, Truck, Users, Calculator, BarChart3, Bell, Folder } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Sidebar,
@@ -28,6 +28,11 @@ const menuItems = [
     title: "Materials",
     url: "/materials",
     icon: Truck,
+  },
+  {
+    title: "Directory",
+    url: "/directory",
+    icon: Folder,
   },
   {
     title: "Invoices",
