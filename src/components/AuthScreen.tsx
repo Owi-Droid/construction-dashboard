@@ -42,13 +42,13 @@ export function AuthScreen({ onLogin }: AuthScreenProps) {
       
       <div className="relative w-full max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
         {/* Left Side - Branding */}
-        <div className="hidden lg:flex flex-col items-center justify-center p-8 animate-fade-in">
+        <div className="hidden lg:flex flex-col items-center justify-center p-8">
           <div className="text-center space-y-6">
             <div className="relative">
-              <div className="w-32 h-32 bg-gradient-to-br from-construction-500 to-construction-600 rounded-full flex items-center justify-center shadow-2xl animate-scale-in">
-               <img src='/img/logo.jpg'/>
+              <div className="w-32 h-32 rounded-full flex items-center justify-center shadow-2xl ">
+               <img src='/img/logo.png'/>
               </div>
-              <div className="absolute -inset-4 bg-gradient-to-r from-construction-400 to-construction-600 rounded-full blur opacity-30 "></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#1570EF] to-[#1366D9] rounded-full blur opacity-30 "></div>
             </div>
             
             <div className="space-y-4">
@@ -189,7 +189,7 @@ export function AuthScreen({ onLogin }: AuthScreenProps) {
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-construction-500 hover:bg-construction-600 text-white font-medium py-2.5 transition-all duration-200 hover:shadow-lg"
+                  className="w-full bg-[#1366D9] hover:bg-[#1570EF] text-white font-medium py-2.5 transition-all duration-200 hover:shadow-lg"
                 >
                   {isLogin ? 'Sign In' : 'Create Account'}
                 </Button>

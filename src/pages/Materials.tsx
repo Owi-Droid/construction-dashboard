@@ -8,14 +8,15 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Search, Plus, Truck, Edit } from "lucide-react";
+import { Search, Truck, Edit } from "lucide-react";
+import { AddMaterialDialog } from "@/components/AddMaterialDialog";
 
 const Materials = () => {
   const [filterStatus, setFilterStatus] = useState("all");
   const [filterCategory, setFilterCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
 
-  const materials = [
+  const [materials, setMaterials] = useState([
     {
       id: 1,
       name: "Portland Cement",
@@ -81,7 +82,11 @@ const Materials = () => {
       supplier: "Steel Works Ltd",
       statusColor: "bg-blue-100 text-blue-700"
     }
-  ];
+  ]);
+
+  const handleMaterialAdd = (newMaterial: any) => {
+    setMaterials(prev => [...prev, newMaterial]);
+  };
 
   const filteredMaterials = materials.filter(material => {
     return (
@@ -105,10 +110,7 @@ const Materials = () => {
                   <h1 className="text-3xl font-bold text-steel-900">Materials Management</h1>
                   <p className="text-steel-600 mt-2">Track and manage construction materials across all projects</p>
                 </div>
-                <Button className="bg-construction-500 hover:bg-construction-600">
-                  <Plus className="w-4 h-4 mr-2" />
-                  Add Material
-                </Button>
+                <AddMaterialDialog onMaterialAdd={handleMaterialAdd} />
               </div>
 
               <Card className="shadow-lg">
