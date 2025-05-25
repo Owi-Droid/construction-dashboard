@@ -68,8 +68,8 @@ export function AppSidebar() {
     <Sidebar className="border-r border-steel-200">
       <SidebarHeader className="p-6">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-construction-500 to-construction-600 rounded-lg flex items-center justify-center">
-            <img src="/img/logo.jpg" />
+          <div className="w-10 h-10  rounded-lg flex items-center justify-center">
+            <img src="/img/logo.png" />
           </div>
           <div>
             <h2 className="text-lg font-bold text-steel-900">DES</h2>
@@ -88,7 +88,7 @@ export function AppSidebar() {
                     asChild 
                     className={`${
                       location.pathname === item.url 
-                        ? 'bg-construction-100 text-construction-700 border-r-2 border-construction-500' 
+                        ? 'bg-blue-100 text-blue-700 border-r-2 border-[#1366D9]' 
                         : 'text-steel-600 hover:bg-steel-100 hover:text-steel-900'
                     } transition-all duration-200`}
                   >
