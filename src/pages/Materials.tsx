@@ -10,11 +10,18 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Search, Truck, Edit } from "lucide-react";
 import { AddMaterialDialog } from "@/components/AddMaterialDialog";
+import { AddCategoryDialog } from "@/components/AddCategoryDialog";
 
-const Materials = () => {
+
+interface MaterialsProps {
+  onLogout: () => void;
+}
+
+const Materials = ({ onLogout }: MaterialsProps) => {
   const [filterStatus, setFilterStatus] = useState("all");
   const [filterCategory, setFilterCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const [categories, setCategories] = useState(["Civil", "Electrical", "Finishing"]);
 
   const [materials, setMaterials] = useState([
     {
@@ -88,6 +95,10 @@ const Materials = () => {
     setMaterials(prev => [...prev, newMaterial]);
   };
 
+  const handleCategoryAdd = (newCategory: string) => {
+    setCategories(prev => [...prev, newCategory]);
+  };
+
   const filteredMaterials = materials.filter(material => {
     return (
       (filterStatus === "all" || material.status === filterStatus) &&
@@ -100,7 +111,7 @@ const Materials = () => {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-gradient-to-br from-steel-50 to-construction-50">
-        <AppSidebar />
+        <AppSidebar onLogout={onLogout}/>
         <main className="flex-1 flex flex-col">
           <Header />
           <div className="flex-1 p-6">
@@ -110,7 +121,13 @@ const Materials = () => {
                   <h1 className="text-3xl font-bold text-steel-900">Materials Management</h1>
                   <p className="text-steel-600 mt-2">Track and manage construction materials across all projects</p>
                 </div>
-                <AddMaterialDialog onMaterialAdd={handleMaterialAdd} />
+                <div className="flex gap-2">
+                  <AddCategoryDialog 
+                    onCategoryAdd={handleCategoryAdd}
+                    existingCategories={categories}
+                  />
+                  <AddMaterialDialog onMaterialAdd={handleMaterialAdd} />
+                </div>
               </div>
 
               <Card className="shadow-lg">
@@ -146,9 +163,9 @@ const Materials = () => {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="all">All Categories</SelectItem>
-                        <SelectItem value="Civil">Civil</SelectItem>
-                        <SelectItem value="Electrical">Electrical</SelectItem>
-                        <SelectItem value="Finishing">Finishing</SelectItem>
+                        {categories.map((category) => (
+                          <SelectItem key={category} value={category}>{category}</SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>

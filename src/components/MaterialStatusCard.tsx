@@ -148,7 +148,7 @@ export function MaterialStatusCard() {
                   Update
                 </Button>
                 {material.status === "In Warehouse" && (
-                  <Button size="sm" className="flex-1 bg-construction-500 hover:bg-construction-600">
+                  <Button size="sm" className="flex-1 bg-[#1366D9] hover:bg-[#1570EF]">
                     Dispatch
                   </Button>
                 )}

@@ -11,7 +11,12 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Search, Plus, FileText, Download, Eye, Trash2 } from "lucide-react";
 import { AddDirectoryDialog } from "@/components/AddDirectoryDialog";
 
-const Directory = () => {
+
+interface DirectoryProps {
+  onLogout: () => void;
+}
+
+const Directory = ({ onLogout }: DirectoryProps) => {
   const [filterProject, setFilterProject] = useState("all");
   const [filterType, setFilterType] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
@@ -94,7 +99,7 @@ const Directory = () => {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-gradient-to-br from-steel-50 to-construction-50">
-        <AppSidebar />
+        <AppSidebar onLogout={onLogout}/>
         <main className="flex-1 flex flex-col">
           <Header />
           <div className="flex-1 p-6">
