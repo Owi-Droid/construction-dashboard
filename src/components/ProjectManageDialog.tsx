@@ -287,7 +287,7 @@ export function ProjectManageDialog({ project, children }: ProjectManageDialogPr
                     />
                   </div>
                 </div>
-                <Button onClick={handleAddLabour} className="bg-construction-500 hover:bg-construction-600">
+                <Button onClick={handleAddLabour} className="bg-[#1366D9] hover:bg-[#1570EF]">
                   <Plus className="w-4 h-4 mr-2" />
                   Add Worker
                 </Button>

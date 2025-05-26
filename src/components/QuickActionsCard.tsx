@@ -10,7 +10,7 @@ export function QuickActionsCard() {
       title: "Add Project",
       icon: Plus,
       link: "/projects/new",
-      color: "bg-construction-500 hover:bg-construction-600",
+      color: "bg-[#1366D9] hover:bg-[#1570EF]",
       description: "Create new construction project"
     },
     {

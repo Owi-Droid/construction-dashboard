@@ -68,7 +68,7 @@ export function EditDashboard({ layout, onLayoutChange }: EditDashboardProps) {
             <Button variant="outline" onClick={() => setTempLayout(layout)}>
               Cancel
             </Button>
-            <Button onClick={handleSave} className="bg-construction-500 hover:bg-construction-600">
+            <Button onClick={handleSave} className="bg-[#1366D9] hover:bg-[#1570EF]">
               Save Changes
             </Button>
           </div>

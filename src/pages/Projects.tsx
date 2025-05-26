@@ -12,7 +12,11 @@ import { NewProjectDialog } from "@/components/NewProjectDialog";
 import { ProjectDetailsDialog } from "@/components/ProjectDetailsDialog";
 import { ProjectManageDialog } from "@/components/ProjectManageDialog";
 
-const Projects = () => {
+interface ProjectsProps {
+  onLogout: () => void;
+}
+
+const Projects = ({ onLogout }: ProjectsProps) => {
   const [projects, setProjects] = useState([
     {
       id: 1,
@@ -81,7 +85,7 @@ const Projects = () => {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-gradient-to-br from-steel-50 to-construction-50">
-        <AppSidebar />
+        <AppSidebar onLogout={onLogout} />
         <main className="flex-1 flex flex-col">
           <Header />
           <div className="flex-1 p-6">

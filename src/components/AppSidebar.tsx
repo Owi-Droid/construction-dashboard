@@ -1,4 +1,4 @@
-import { Construction, Home, FileText, Truck, Users, Calculator, BarChart3, Bell, Folder } from "lucide-react";
+import { Construction, Home, FileText, Truck, Users, Calculator, BarChart3, Bell, Folder,LogOut  } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Sidebar,
@@ -10,9 +10,13 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarHeader,
+   SidebarFooter
 } from "@/components/ui/sidebar";
+import { Button } from "@/components/ui/button";
 
-
+interface AppSidebarProps {
+  onLogout?: () => void;
+}
 const menuItems = [
   {
     title: "Dashboard",
@@ -44,25 +48,30 @@ const menuItems = [
     url: "/team",
     icon: Users,
   },
-  {
-    title: "Finance",
-    url: "/finance",
-    icon: Calculator,
-  },
-  {
-    title: "Reports",
-    url: "/reports",
-    icon: BarChart3,
-  },
-  {
-    title: "Notifications",
-    url: "/notifications",
-    icon: Bell,
-  },
+  // {
+  //   title: "Finance",
+  //   url: "/finance",
+  //   icon: Calculator,
+  // },
+  // {
+  //   title: "Reports",
+  //   url: "/reports",
+  //   icon: BarChart3,
+  // },
+  // {
+  //   title: "Notifications",
+  //   url: "/notifications",
+  //   icon: Bell,
+  // },
 ];
-
-export function AppSidebar() {
+export function AppSidebar({ onLogout }: AppSidebarProps) {
   const location = useLocation();
+
+  const handleLogout = () => {
+    if (onLogout) {
+      onLogout();
+    }
+  };
 
   return (
     <Sidebar className="border-r border-steel-200">
@@ -103,6 +112,16 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+       <SidebarFooter className="p-4">
+        <Button 
+          variant="outline" 
+          className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50 border-red-200"
+          onClick={handleLogout}
+        >
+          <LogOut className="w-4 h-4 mr-2" />
+          Logout
+        </Button>
+      </SidebarFooter>
     </Sidebar>
   );
 }

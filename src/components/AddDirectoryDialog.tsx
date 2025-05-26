@@ -253,7 +253,7 @@ export function AddDirectoryDialog({ onFileAdd, children }: AddDirectoryDialogPr
             </Button>
             <Button 
               type="submit" 
-              className="bg-construction-500 hover:bg-construction-600"
+              className="bg-[#1366D9] hover:bg-[#1570EF]"
               disabled={selectedFiles.length === 0 || !formData.project || !formData.category}
             >
               Upload Files

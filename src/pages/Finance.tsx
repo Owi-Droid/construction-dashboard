@@ -6,7 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calculator, BarChart3, FileText, Truck } from "lucide-react";
 
-const Finance = () => {
+interface FinanceProps {
+  onLogout: () => void;
+}
+
+const Finance = ({ onLogout }: FinanceProps) => {
   const financeData = {
     totalBudget: 48000000,
     totalSpent: 16550000,
@@ -67,7 +71,7 @@ const Finance = () => {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-gradient-to-br from-steel-50 to-construction-50">
-        <AppSidebar />
+        <AppSidebar onLogout={onLogout}/>
         <main className="flex-1 flex flex-col">
           <Header />
           <div className="flex-1 p-6">
@@ -79,7 +83,7 @@ const Finance = () => {
                 </div>
                 <div className="flex gap-2">
                   <Button variant="outline">Export Report</Button>
-                  <Button className="bg-construction-500 hover:bg-construction-600">
+                  <Button className="bg-[#1366D9] hover:bg-[#1570EF]">
                     <FileText className="w-4 h-4 mr-2" />
                     Generate Invoice
                   </Button>

@@ -10,7 +10,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Search, Plus, FileText, Eye, Edit } from "lucide-react";
 
-const Invoices = () => {
+interface InvoicesProps {
+  onLogout: () => void;
+}
+
+const Invoices = ({ onLogout }: InvoicesProps) => {
   const [filterStatus, setFilterStatus] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -94,7 +98,7 @@ const Invoices = () => {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-gradient-to-br from-steel-50 to-construction-50">
-        <AppSidebar />
+        <AppSidebar onLogout={onLogout}/>
         <main className="flex-1 flex flex-col">
           <Header />
           <div className="flex-1 p-6">
@@ -104,7 +108,7 @@ const Invoices = () => {
                   <h1 className="text-3xl font-bold text-steel-900">Invoice Management</h1>
                   <p className="text-steel-600 mt-2">Track and manage all construction material invoices</p>
                 </div>
-                <Button className="bg-construction-500 hover:bg-construction-600">
+                <Button className="bg-[#1366D9] hover:bg-[#1570EF]">
                   <Plus className="w-4 h-4 mr-2" />
                   Create Invoice
                 </Button>
